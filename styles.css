@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    font-family: monospace;
+
+    --white: #FFF8F0;
+    --blue: #355070;
+    --darker-blue: #233549;
+    --darkest-blue: #172230;
+    --lavend: #6d597a;
+    --rose: #b56576;
+    --coral: #e56b6f;
+    --bronze: #eaac8b;
+    --baby-blue: #89CFF0; 
+    --light-bronze: #ECB496;
+    --mint: #3eb489;
+
+    font-family: "Lexend", monospace;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+body h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    font-style: italic;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+main {
+    flex: 1;
+}
+
+.books-container {
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+.book-card {
+    background-color: var(--baby-blue);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    text-align: left;
+    gap: 1rem;
+    color: var(--darkest-blue);
+    min-height: 250px;
+    border-radius: 20px;
+    
+    -webkit-box-shadow: 6px 6px 0px 0px var(--mint);
+    -moz-box-shadow: 6px 6px 0px 0px var(--mint);
+    box-shadow: 6px 6px 0px 0px var(--mint);
+
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.book-card > * {
+    width: 100%;
+}
+
+.book-card:hover {
+    box-shadow: none;
+    transform: scale(1.02);
+}
+
+.remove-button {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: var(--blue);
+    color: var(--white);
+    transition: background-color 0.2s, transform 0.1s;
+    width: 40%;
+    align-self: center;
+}
+
+.read-button {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: var(--blue);
+    color: var(--white);
+    transition: background-color 0.2s, transform 0.1s;
+    width: 80%;
+    align-self: center;
+}
+
+.remove-button:hover,
+.read-button:hover {
+    transform: scale(1.02);
+}
+
+#bookAdd {
+    padding: 0.7rem 2rem;
+    margin: 1rem;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: var(--blue);
+    color: var(--white);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#bookAdd:hover {
+    -webkit-box-shadow: 6px 6px 0px 0px var(--darker-blue);
+    -moz-box-shadow: 6px 6px 0px 0px var(--darker-blue);
+    box-shadow: 6px 6px 0px 0px var(--darker-blue);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+footer {
+    padding: 1rem;
+    background-color: var(--blue);
+    margin-top: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0; 
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+    z-index: 10;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--blue);
+    padding: 2rem;
+    border-radius: 20px;
+    z-index: 20;
+    color: var(--white);
+}
+
+.hidden {
+    display: none;
+}
+
+input:user-invalid {
+    outline: 1px solid red;
+}
+
+input {
+    border-radius: 5px;
+    border-style: none;
+}
+
+input:focus {
+    outline: none;
+    outline: 3px solid var(--darkest-blue);
+}
+
+.input-container {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.book-form {
+    padding: 1rem;
+}
+
+.book-form button {
+    padding: 0.5rem 3rem;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: var(--darker-blue);
+    color: var(--white);
+    border-style: none;
+    border-radius: 20px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.book-form button:hover {
+    -webkit-box-shadow: 6px 6px 0px 0px var(--darkest-blue);
+    -moz-box-shadow: 6px 6px 0px 0px var(--darkest-blue);
+    box-shadow: 6px 6px 0px 0px var(--darkest-blue);
+    transform: scale(1.02);
+}
