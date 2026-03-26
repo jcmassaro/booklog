@@ -16,7 +16,7 @@ overlay.addEventListener("click", e => {
     modal.classList.add("hidden");
 });
 
-formButton.addEventListener("submit", e => {
+formButton.addEventListener("click", e => {
     e.preventDefault();
 
     const formData = new FormData(form);
