@@ -34,20 +34,22 @@ formButton.addEventListener("click", e => {
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
+class Book{
+    constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.id = crypto.randomUUID();
+    this.id = crypto.randomUUID();}
 
-    this.info = function() {
+    info(){
         return (`${this.title} by ${this.author}, ${this.pages}, ${this.read} with ID of ${this.id}`);
     }
-}
 
-Book.prototype.toggleRead = function() {
+
+toggleRead() {
     this.read = !this.read;
+}
 };
 
 function addBookToLibrary(title, author, pages, read) {
